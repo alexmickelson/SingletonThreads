@@ -1,7 +1,9 @@
 public class myWorker extends Thread {
     Item item;
-    public myWorker(Item item){
+    int id;
+    public myWorker(int id, Item item){
         this.item = item;
+        this.id = id;
     }
     
     public void run (){
@@ -10,6 +12,7 @@ public class myWorker extends Thread {
         } catch (InterruptedException e) {
             
         }
-        System.out.println(" I am a Worker, " + item.Print());
+        System.out.println(" I am a Worker " + id + " " + item.Print());
+        System.out.flush();
     }
 }
